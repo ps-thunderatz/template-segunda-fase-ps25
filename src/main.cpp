@@ -2,30 +2,25 @@
  * @file main.cpp
  *
  * @brief Main function
- *
- * @author Thunderatz Development Team <comp@thunderatz.org>
  */
 
-#include "mcu.hpp"
+#include "controller.hpp"
 #include "target.hpp"
-
-/*****************************************
- * Private Constant Definitions
- *****************************************/
-
-static constexpr uint16_t led_toggle_delay_ms = 1500;
+#include "led.hpp"
+#include "mcu.hpp"
+#include "locomotion.hpp"
+#include "rc.hpp"
 
 /*****************************************
  * Main Function
  *****************************************/
 
-int main() {
-    hal::mcu::init();
+int main(void) {
+    // TODO: Adicionar a lógica da main.
+    for (;;) { }
+    return 0;
+}
 
-    hal::Gpio led{led_config};
-
-    for (;;) {
-        led.toggle();
-        hal::mcu::sleep(led_toggle_delay_ms);
-    }
+extern "C" void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef* htim) {
+    Rc::handle_global_callback(htim);
 }

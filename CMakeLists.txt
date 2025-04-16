@@ -10,7 +10,7 @@ cmake_minimum_required(VERSION 3.22)
 ## Project Configuration
 ###############################################################################
 
-set(CMAKE_PROJECT_NAME stm32_project_template)
+set(CMAKE_PROJECT_NAME PedrinhaEscape)
 
 # Set the board version to an empty string if your board doesn't have a version
 set(BOARD_VERSION "")
